@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript Programming Activities | CS-1130</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>JavaScript Programming Activities</h1>
+  <p class="course">CS-1130 Introduction to Computing &middot; SEM 1 2026 &middot; GERALDE</p>
+  <p>A simple, interactive website built with HTML, CSS, and JavaScript. It holds four programming assignments that show basic programming concepts through calculators and small programs.</p>
+  <p class="course">By Shayne Algones of BS Data Science 1-A</p>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#a1">Assignment 1</a>
+  <a href="#a2">Assignment 2</a>
+  <a href="#a3">Assignment 3</a>
+  <a href="#a4">Assignment 4</a>
+</nav>
+
+<main>
+
+
+  <!-- ASSIGNMENT 1 -->
+  <section id="a1">
+    <h2>Assignment 1: Conversion</h2>
+    <p class="desc">Convert Celsius to Fahrenheit, Fahrenheit to Celsius, meters to feet, and feet to meters.</p>
+    <div class="row">
+      <div>
+        <label for="convType">Conversion</label>
+        <select id="convType">
+          <option value="c2f">Celsius to Fahrenheit</option>
+          <option value="f2c">Fahrenheit to Celsius</option>
+          <option value="m2ft">Meters to Feet</option>
+          <option value="ft2m">Feet to Meters</option>
+        </select>
+      </div>
+      <div>
+        <label for="convValue">Value</label>
+        <input type="number" id="convValue" step="any" placeholder="Enter a number">
+      </div>
+    </div>
+    <button type="button" id="convBtn">Convert</button>
+    <div class="result" id="convResult" aria-live="polite">Pick a conversion and enter a value.</div>
+  </section>
+
+  <!-- ASSIGNMENT 2 -->
+  <section id="a2">
+    <h2>Assignment 2: Income Tax Calculator</h2>
+    <p class="desc">Enter the net taxable income. Income Tax = Basic Tax + Rate &times; the excess over the lower limit.</p>
+    <label for="taxIncome">Net taxable income (PHP)</label>
+    <input type="number" id="taxIncome" min="0" step="any" placeholder="e.g. 520000">
+    <button type="button" id="taxBtn">Compute tax</button>
+    <button type="button" class="alt" id="taxClear">Clear</button>
+    <div class="result" id="taxResult" aria-live="polite">Enter an amount to see the income tax.</div>
+
+    <div class="scroll">
+      <table id="taxTable">
+        <thead>
+          <tr><th>Over</th><th>But not over</th><th>Basic tax + rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>-</td><td>P250,000</td><td>0%</td></tr>
+          <tr><td>P250,000</td><td>P400,000</td><td>20% of the excess over P250,000</td></tr>
+          <tr><td>P400,000</td><td>P800,000</td><td>P30,000 + 25% of the excess over P400,000</td></tr>
+          <tr><td>P800,000</td><td>P2,000,000</td><td>P130,000 + 30% of the excess over P800,000</td></tr>
+          <tr><td>P2,000,000</td><td>P8,000,000</td><td>P490,000 + 32% of the excess over P2,000,000</td></tr>
+          <tr><td>P8,000,000</td><td>-</td><td>P2,410,000 + 35% of the excess over P8,000,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ASSIGNMENT 3 -->
+  <section id="a3">
+    <h2>Assignment 3: Factorial, Sum, and Average</h2>
+    <p class="desc">For the first N natural numbers: Factorial uses a <em>while</em> loop, Sum uses a <em>do-while</em> loop, and Average uses a <em>for</em> loop.</p>
+    <label for="loopN">N (a whole number from 1 to 170)</label>
+    <input type="number" id="loopN" min="1" max="170" step="1" placeholder="e.g. 5">
+    <button type="button" id="loopBtn">Calculate</button>
+    <div class="result" id="loopResult" aria-live="polite">Enter N to see the results.</div>
+  </section>
+
+  <!-- ASSIGNMENT 4 -->
+  <section id="a4">
+    <h2>Assignment 4: Simple Payroll</h2>
+    <p class="desc">Add or delete employees in the payroll list. Gross Pay = Days Worked &times; Daily Rate. Net Pay = Gross Pay &minus; Deduction Amount.</p>
+    <div class="row">
+      <div>
+        <label for="empName">Employee name</label>
+        <input type="text" id="empName" placeholder="e.g. Maria Santos">
+      </div>
+      <div>
+        <label for="empDays">Days worked</label>
+        <input type="number" id="empDays" min="0" step="any">
+      </div>
+      <div>
+        <label for="empRate">Daily rate</label>
+        <input type="number" id="empRate" min="0" step="any">
+      </div>
+      <div>
+        <label for="empDed">Deduction amount</label>
+        <input type="number" id="empDed" min="0" step="any" value="0">
+      </div>
+    </div>
+    <button type="button" id="addBtn">Add employee</button>
+    <div class="result" id="payMsg" aria-live="polite">Fill in the form and add an employee.</div>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th><th>Employee name</th>
+            <th class="num">Days worked</th><th class="num">Daily rate</th>
+            <th class="num">Gross pay</th><th class="num">Deduction amount</th><th class="num">Net pay</th>
+          </tr>
+        </thead>
+        <tbody id="payBody">
+          <tr><td colspan="7">No employees yet.</td></tr>
+        </tbody>
+        <tfoot id="payFoot"></tfoot>
+      </table>
+    </div>
+
+    <div class="row" style="margin-top:10px">
+      <div>
+        <label for="delLine">Line number to delete</label>
+        <input type="number" id="delLine" min="1" step="1" placeholder="e.g. 2">
+      </div>
+    </div>
+    <button type="button" class="alt" id="delBtn">Delete employee</button>
+  </section>
+
+</main>
+
+<footer>
+  <p>CS-1130 Introduction to Computing &middot; SEM 1 2026 &middot; JavaScript Programming Activities</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
