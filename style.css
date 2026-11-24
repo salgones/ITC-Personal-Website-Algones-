@@ -1,0 +1,286 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172b3a;
+  background: #f3f6f8;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.container {
+  width: min(100% - 2rem, 1100px);
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 3.5rem 0 3rem;
+  color: #fff;
+  background: #183b56;
+}
+
+.eyebrow,
+.section-number {
+  margin: 0 0 0.6rem;
+  color: #61d6c3;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+}
+
+.intro {
+  margin: 0.8rem 0 0;
+  color: #d7e5ed;
+  font-size: 1.1rem;
+}
+
+.calculator-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1.5rem 0;
+}
+
+.nav-button {
+  flex: 1 1 180px;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c9d5dc;
+  border-radius: 0.5rem;
+  color: #183b56;
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
+  border-color: #168b7e;
+  outline: 2px solid #168b7e;
+  outline-offset: 2px;
+}
+
+.nav-button.active {
+  border-color: #168b7e;
+  color: #fff;
+  background: #168b7e;
+}
+
+.calculator-panel {
+  margin-bottom: 3rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid #e0e7eb;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(23 43 58 / 6%);
+}
+
+.calculator-section h2 {
+  margin: 0 0 0.75rem;
+  color: #183b56;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.calculator-section > p:not(.section-number) {
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.calculator-form,
+.payroll-form,
+.delete-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.calculator-form > label {
+  flex: 1 1 220px;
+}
+
+.payroll-form > label {
+  flex: 1 1 180px;
+}
+
+.delete-form {
+  margin: 1.5rem 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e0e7eb;
+}
+
+.delete-form > label {
+  flex: 0 1 240px;
+}
+
+.calculator-form label,
+.payroll-form label,
+.delete-form label,
+.loop-card label {
+  display: grid;
+  gap: 0.4rem;
+  color: #344c5b;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #aebdc6;
+  border-radius: 0.4rem;
+  color: #172b3a;
+  background: #fff;
+  font: inherit;
+}
+
+input:focus-visible,
+select:focus-visible {
+  border-color: #168b7e;
+  outline: 2px solid #168b7e;
+  outline-offset: 1px;
+}
+
+.action-button {
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid #168b7e;
+  border-radius: 0.4rem;
+  color: #fff;
+  background: #168b7e;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  border-color: #116d63;
+  background: #116d63;
+}
+
+.action-button:focus-visible {
+  outline: 2px solid #183b56;
+  outline-offset: 2px;
+}
+
+.secondary-button {
+  border-color: #a53a3a;
+  background: #a53a3a;
+}
+
+.secondary-button:hover {
+  border-color: #812d2d;
+  background: #812d2d;
+}
+
+.result {
+  min-height: 1.5em;
+  margin: 1.25rem 0 0;
+  color: #116d63;
+  font-weight: 700;
+}
+
+.loop-calculators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.loop-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+  padding: 1.25rem;
+  border: 1px solid #e0e7eb;
+  border-radius: 0.6rem;
+  background: #f8fafb;
+}
+
+.loop-card h3,
+.loop-card p {
+  margin: 0;
+}
+
+.loop-card h3 {
+  color: #183b56;
+  font-size: 1.2rem;
+}
+
+.loop-card > p:not(.result) {
+  min-height: 3em;
+  color: #5a6c78;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.loop-card .action-button {
+  align-self: flex-start;
+}
+
+.loop-card .result {
+  overflow-wrap: anywhere;
+}
+
+.table-wrap {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+caption {
+  padding: 0 0 0.65rem;
+  color: #183b56;
+  font-weight: 700;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #d5dfe4;
+  vertical-align: top;
+}
+
+th {
+  color: #183b56;
+  background: #eef3f5;
+}
+
+.empty-row td {
+  color: #5a6c78;
+  text-align: center;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav-button {
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+  }
+}
